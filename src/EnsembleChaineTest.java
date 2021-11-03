@@ -7,24 +7,27 @@ public class EnsembleChaineTest {
     public void ajouterTest() {
         EnsembleChaine ensemble = new EnsembleChaine();
         ensemble.ajouter("jojo");
+        assertTrue(ensemble.ajouter("random"));
         assertFalse(ensemble.ajouter("jojo"));
     }
 
     @Test
     public void equalsTest() {
-        EnsembleChaine ensemble1 = new EnsembleChaine(), ensemble2 = new EnsembleChaine();
+        EnsembleChaine ensemble1 = new EnsembleChaine(), ensemble2 = new EnsembleChaine(),
+                ensemble3 = new EnsembleChaine();
 
         ensemble1.ajouter("jojo");
         ensemble2.ajouter("jojo");
+        ensemble3.ajouter("random");
 
         assertTrue(ensemble1.equals(ensemble2));
+        assertFalse(ensemble1.equals(ensemble3));
     }
 
     @Test
     public void unionTest() {
         EnsembleChaine ensemble1 = new EnsembleChaine(), ensemble2 = new EnsembleChaine(),
                 ensemble3, unionEnsemble1n2 = new EnsembleChaine();
-
         ensemble1.ajouter("jonathan");
         ensemble2.ajouter("kancel");
 
@@ -58,18 +61,18 @@ public class EnsembleChaineTest {
 
     @Test
     public void unionDisjointeTest() {
-        EnsembleChaine ensemble1 = new EnsembleChaine(), ensemble2 = new EnsembleChaine(),
+        EnsembleChaine ensembleChaine = new EnsembleChaine(), ensembleChaine2 = new EnsembleChaine(),
                 ensemble3, unionDisjointEnsemble1n2 = new EnsembleChaine();
 
-        ensemble1.ajouter("jonathan");
-        ensemble1.ajouter("kancel");
-        ensemble1.ajouter("miage");
+        ensembleChaine.ajouter("jonathan");
+        ensembleChaine.ajouter("kancel");
+        ensembleChaine.ajouter("miage");
 
-        ensemble2.ajouter("random");
-        ensemble2.ajouter("student");
-        ensemble2.ajouter("miage");
+        ensembleChaine2.ajouter("random");
+        ensembleChaine2.ajouter("student");
+        ensembleChaine2.ajouter("miage");
 
-        ensemble3 = ensemble1.unionDisjointe(ensemble2);
+        ensemble3 = ensembleChaine.unionDisjointe(ensembleChaine2);
 
         unionDisjointEnsemble1n2.ajouter("jonathan");
         unionDisjointEnsemble1n2.ajouter("kancel");

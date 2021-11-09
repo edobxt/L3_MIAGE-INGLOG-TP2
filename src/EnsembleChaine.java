@@ -1,3 +1,8 @@
+/*
+INGLOG - TP2
+Travail en binome entre BARVAUT Teddrice et KANCEL Jonathan.
+ */
+
 import java.util.ArrayList;
 
 public class EnsembleChaine {
@@ -70,6 +75,6 @@ public class EnsembleChaine {
             }
         }
 
-            return unionDisjointEnsemble;
+        return unionDisjointEnsemble;
     }
 }

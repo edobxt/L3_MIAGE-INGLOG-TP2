@@ -1,3 +1,8 @@
+/*
+INGLOG - TP2
+Travail en binome entre BARVAUT Teddrice et KANCEL Jonathan
+ */
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 

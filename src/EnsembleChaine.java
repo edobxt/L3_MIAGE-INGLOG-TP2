@@ -15,7 +15,18 @@ public class EnsembleChaine {
     }
     //Test si l’ensemble e est equivalent à l’ensemble courant
     public boolean equals(EnsembleChaine e) {
-        return liste.equals(e.liste);
+        int nb = 0;
+        if (this.liste.size() == e.liste.size()) {
+            for (String element: this.liste) {
+                if (e.liste.contains(element)) {
+                    nb++;
+                }
+            }
+            return nb == this.liste.size();
+        }
+        else {
+            return false;
+        }
     }
     //Renvoie l’union de l’ensemble e et l’ensemble courant
     public EnsembleChaine union(EnsembleChaine e){

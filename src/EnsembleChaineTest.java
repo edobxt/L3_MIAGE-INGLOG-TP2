@@ -7,17 +7,25 @@ public class EnsembleChaineTest {
     public void ajouterTest() {
         EnsembleChaine ensemble = new EnsembleChaine();
         ensemble.ajouter("jojo");
-        assertTrue(ensemble.ajouter("random"));
+        assertTrue(ensemble.liste.contains("jojo"));
         assertFalse(ensemble.ajouter("jojo"));
+        assertTrue(ensemble.ajouter("random"));
     }
 
     @Test
     public void equalsTest() {
         EnsembleChaine ensemble1 = new EnsembleChaine(), ensemble2 = new EnsembleChaine(),
                 ensemble3 = new EnsembleChaine();
-
+        // Ajout d'éléments dans l'ensemble 1
         ensemble1.ajouter("jojo");
+        ensemble1.ajouter("wesh");
+        ensemble1.ajouter("test");
+        // Ajout d'éléments dans l'ensemble 2
         ensemble2.ajouter("jojo");
+        ensemble2.ajouter("test");
+        ensemble2.ajouter("wesh");
+
+        // Ajout d'éléments dans l'ensemble 3
         ensemble3.ajouter("random");
 
         assertTrue(ensemble1.equals(ensemble2));
